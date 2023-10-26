@@ -29,9 +29,6 @@ def unmute_system_volume():
 
 
 if __name__ == "__main__":
-
-    path_start_menu="/mnt/c/Users/Formation/AppData/Roaming/Microsoft/Windows/Start Menu/Programmes"
-    exe_name="robin.exe"
     target_volume = 0.45
     music_file = "robin.wav"
     sound_test_file="sound_opening.wav"
@@ -81,6 +78,7 @@ print("Starting the troll session")
 print("Running the sound test...")
 try:
     print("Playing the song !")
+    set_system_volume(0.35)
     play_music(sound_test_path)
     print("Sound test is OK.")
 except Exception as e:
@@ -90,7 +88,7 @@ except Exception as e:
 print("Script is running !")
 while True:
     current_time = time.localtime()
-    if current_time.tm_min % 5 == 0:
+    if current_time.tm_min % 60 == 0:
         main_func()
         time.sleep(61)
     time.sleep(1)  # Attendez une minute avant de vérifier à nouveau
